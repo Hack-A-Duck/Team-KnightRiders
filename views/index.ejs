@@ -1,0 +1,56 @@
+            <!-- Header PArt -->
+<!-- ************************************************* -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+	<link  rel="stylesheet" type="text/css" href="/stylesheet/app.css">
+<!-- <style type="text/css"></style> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<!-- ******************************** HEader Ends************************************** -->
+	                           
+	                           <!-- Navbar  -->
+	<!-- ================================================================ -->
+	<div class="ui fixed inverted menu">
+		<div class="ui container">
+			<div class="header item">
+				<i class="rss icon"></i>Blog Site
+			</div>
+			<a class="item" href="/blogs">Home</a>
+			<a class="item" href="/blogs/new">New Post</a>
+		</div>
+  
+</div>
+	
+	<!-- *********************** Navbar Ends***************************************** -->
+	<div id="mainContainer" class="conatiner mt-5">
+	
+	
+	<%Blog.forEach(function(Blog){%>
+			<div class="container mt-5 border border-dark">
+	<h2>
+		<%=Blog.title%>
+	</h2>
+	<img src="<%=Blog.image%>">
+	<div>
+		
+		<a href="/blogs/<%=Blog._id%>" class="btn btn-primary">Show more</a>
+	</div>	
+				
+		
+			</div>
+
+	
+	<%})%>
+</div>
+	
+<!-- 	
+	         Footer PArt
+	=========================================== -->
+
+	</body>
+</html>
+

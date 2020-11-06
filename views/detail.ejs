@@ -1,0 +1,71 @@
+
+            <!-- Header PArt -->
+<!-- ************************************************* -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+	<link  rel="stylesheet" type="text/css" href="/stylesheet/app.css">
+		
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- <style type="text/css"></style> -->
+</head>
+<body>
+<!-- ******************************** HEader Ends************************************** -->
+	                           
+	                           <!-- Navbar  -->
+	<!-- ================================================================ -->
+	<div class="ui fixed inverted menu">
+		<div class="ui container">
+			<div class="header item">
+				<i class="rss icon"></i>Blog Site			</div>
+			<a class="item" href="/blogs">Home</a>
+			<a class="item" href="/blogs/<%=blog._id%>/edit">Edit Post</a>
+		</div>
+  
+</div>
+	
+	<!-- *********************** Navbar Ends***************************************** -->
+                  
+	
+	
+	                      <!-- Form  Display Part -->
+	<!-- ================================================================== -->
+	
+	<div id="mainContainer" class="container">
+	
+	<h1>
+		<div>
+		<%=blog.title%>	
+	</div>
+	</h1>
+		<div>
+			<image src="<%=blog.image%>"></image>
+	</div>
+	
+	<div>
+		<%=blog.body%>	
+	</div>
+	
+	<form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+		<button class="btn btn-danger">Delete Blog
+			
+		</button>
+		</form>
+	</div>
+	
+	<!-- *************************************************************************************** -->
+	
+<!-- Footer PArt
+=========================================== -->
+
+	</body>
+</html>
+
+
+
+
+
+
+

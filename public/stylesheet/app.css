@@ -1,0 +1,25 @@
+i.icon{
+	
+	font-size:1.5rem;
+	color:yellow;
+}
+
+#mainContainer{
+	position:relative;
+	top:50px;
+}
+
+#input_des{
+	height:100px;
+	width:50%;
+}
+
+#input_title{
+	
+	width:50%;
+}
+
+#input_image{
+	
+	width:50%;
+}
