@@ -14,10 +14,13 @@ app.use(express.static("public"));
                //DATA-BASE Setup
 // =====================================================
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/BlogApp",{useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect("mongodb://localhost/BlogApp",{useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://blogHAB:blogHAB@cluster1.kce6v.mongodb.net/blogHAB?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true});
+
+
+// mongodb+srv://blogHAB:<password>@cluster1.kce6v.mongodb.net/<dbname>?retryWrites=true&w=majority
 mongoose.set('useFindAndModify', false);
 
-//Schema Setup
 var BlogSchema = new mongoose.Schema({
 	title: String,
 	image:String,
@@ -156,6 +159,8 @@ app.delete("/blogs/:id",function(req,res){
 
 
 // ************************************* Post Route Ended****************************
-app.listen("3000",function(){
-	console.log("Server Started");
-});
+// app.listen("3000",function(){
+// 	console.log("Server Started");
+// });
+
+app.listen(process.env.port,process.env.ip);
