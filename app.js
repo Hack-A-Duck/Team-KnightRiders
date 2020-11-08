@@ -163,4 +163,6 @@ app.delete("/blogs/:id",function(req,res){
 // 	console.log("Server Started");
 // });
 
-app.listen(process.env.port,process.env.ip);
+// app.listen(process.env.port,process.env.ip);
+
+app.listen(process.env.PORT,process.env.IP);
