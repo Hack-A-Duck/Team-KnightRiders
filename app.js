@@ -1,6 +1,18 @@
-var express = require("express");
+// from auth to cross verify
+var express               = require("express"),
+    mongoose              = require("mongoose"),
+    passport              = require("passport"),
+    bodyParser            = require("body-parser"),
+    User                  = require("./models/user"),
+    LocalStrategy         = require("passport-local"),
+    passportLocalMongoose = require("passport-local-mongoose"); 
+
+
+
+//*************************************** */
+// var express = require("express");
 var app = express();
-var bodyParser = require("body-parser");
+// var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
@@ -13,7 +25,7 @@ app.use(express.static("public"));
 
                //DATA-BASE Setup
 // =====================================================
-var mongoose = require("mongoose");
+// var mongoose = require("mongoose");
 // mongoose.connect("mongodb://localhost/BlogApp",{useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connect("mongodb+srv://blogHAB:blogHAB@cluster1.kce6v.mongodb.net/blogHAB?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -30,8 +42,25 @@ var BlogSchema = new mongoose.Schema({
 //************
 
 var Blog = mongoose.model("Data",BlogSchema);
+// ======================================================================================
+						  //"Passports Imports" //
+			// ===============================================
 
+			app.use(require("express-session")({
+				secret : "Rusty is the best and cutest dog in the world",
+				resave : false , 
+				saveUninitialized : false
+			}));
+			
+			app.use(passport.initialize());
+			app.use(passport.session());
+			
+			passport.use(new LocalStrategy(User.authenticate()));
+			passport.serializeUser(User.serializeUser());
+			passport.deserializeUser(User.deserializeUser());
+			
 
+// ************************************************************************************			
 
 
               // RESTFUL Routes:-
@@ -42,6 +71,7 @@ var Blog = mongoose.model("Data",BlogSchema);
 app.get("/",function(req,res){
 	res.redirect("/blogs");
 });
+
 
 
 app.get("/blogs",function(req,res){
@@ -124,7 +154,7 @@ app.put("/blogs/:id",function(req,res){
 	
 	
 	var title = req.body.Title;
-var image = req.body.Image;
+     var image = req.body.Image;
 	var des = req.body.Description;
 	var newData = {title:title,image:image,body:des};
 	
@@ -158,11 +188,76 @@ app.delete("/blogs/:id",function(req,res){
 // ************************************************
 
 
+// Authentication Routes:-
+// ===============================
+
+// /show signup form
+app.get("/register",function(req, res) {
+    res.render("register");
+});
+
+// app.get("/success",isLoggedIn, function(req, res){
+// 	res.render("success"); 
+//  });
+
+// handling user sign up
+app.post("/register",function(req,res){
+    var username = req.body.username;
+    var password = req.body.password;
+    User.register(new User({username : req.body.username}), req.body.password, function(err,user){
+        if(err){
+            console.log(err);
+            return res.render("/register");
+        }
+        passport.authenticate("local")(req,res,function(){
+            res.redirect("/");
+        });
+    });
+});
+
+//LOGIN ROuTES
+
+app.get("/login",function(req, res) {
+    res.render("login");
+});
+//login logic
+//middleware
+app.post("/login", passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login"
+    }),function(req,res){
+});
+
+app.get("/logout",function(req, res) {
+    req.logout();
+    res.redirect("/");
+});
+
+function isLoggedIn(req,res,next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
+
+
+
+// ********************************Auth routes ends***********************8
+
+
+
+// isLoggedIn
+
+
+
+
+
+
 // ************************************* Post Route Ended****************************
 // app.listen("3000",function(){
 // 	console.log("Server Started");
 // });
 
-// app.listen(process.env.port,process.env.ip);
+app.listen(process.env.port,process.env.ip);
 
-app.listen(process.env.PORT,process.env.IP);
+// app.listen(process.env.PORT,process.env.IP);

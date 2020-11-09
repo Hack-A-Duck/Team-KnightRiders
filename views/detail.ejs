@@ -21,7 +21,7 @@
 			<div class="header item">
 				<i class="rss icon"></i>Blog Site			</div>
 			<a class="item" href="/blogs">Home</a>
-			<a class="item" href="/blogs/<%=blog._id%>/edit">Edit Post</a>
+		
 		</div>
   
 </div>
@@ -48,6 +48,9 @@
 		<%=blog.body%>	
 	</div>
 	
+
+	<a class="item btn btn-success" href="/blogs/<%=blog._id%>/edit">Edit Post</a>
+
 	<form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
 		<button class="btn btn-danger">Delete Blog
 			
