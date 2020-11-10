@@ -21,7 +21,16 @@
 			<div class="header item">
 				<i class="rss icon"></i>Blog Site			</div>
 			<a class="item" href="/blogs">Home</a>
+			<% if(cu){ %>
+		<a class="item" id="modifyBlog" href="#">Modify Post</a>
+				<% }else{ %>
+		<a class="item" id="modifyBlog" href="/login">Modify Post</a>		
+					<% } %>
 		
+
+		<a class="item" href="/login">Login</a>
+		<a class="item" href="/register">Sign Up</a>
+		<a class="item" href="/logout">Logout</a>
 		</div>
   
 </div>
@@ -34,7 +43,13 @@
 	<!-- ================================================================== -->
 	
 	<div id="mainContainer" class="container">
-	
+	<%=cu%>
+
+	<% if(cu){ %>
+		
+	<% }else{ %>
+	    
+		<% } %>
 	<h1>
 		<div>
 		<%=blog.title%>	
@@ -48,18 +63,60 @@
 		<%=blog.body%>	
 	</div>
 	
-
-	<a class="item btn btn-success" href="/blogs/<%=blog._id%>/edit">Edit Post</a>
-
-	<form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
-		<button class="btn btn-danger">Delete Blog
-			
-		</button>
-		</form>
+    <div>
+		Created by:-<%=blog.uname%>
 	</div>
+
+	<% if(cu){ %> 
+	<% if(cu._id.equals(blog.uid)){ %>
+<!-- //modify -->
+<a class="item btn btn-success" id="editBlog1" href="/blogs/<%=blog._id%>/edit">Edit Post</a>
+
+<form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+	<button class="btn btn-danger" id="deleteBlog1">
+		Delete Blog
+	</button>
+</form>
+<!-- ********************* -->
+
+		<% }else{ %>
+			
+<!-- //modify -->
+<a class="item btn btn-success" id="editBlog1" href="/wrong">Edit Post</a>
+
+<form action="/wrong">
+	<button class="btn btn-danger" id="deleteBlog1">
+		Delete Blog
+	</button>
+</form>
+<!-- ********************* -->
+
+<% } %>
+
+<% } %>
+
+</div>
 	
+<style>
+	.hide{
+		visibility: hidden;
+	}
+</style>
+
+
 	<!-- *************************************************************************************** -->
-	
+	<script>
+
+var modify=document.querySelector("#modifyBlog");
+var btnEdit=document.querySelector("#editBlog1");
+var btnDelete=document.querySelector("#deleteBlog1");
+modify.addEventListener("click",function(){
+	btnEdit.classList.toggle("hide");
+	btnDelete.classList.toggle("hide");
+})
+	</script>
+
+
 <!-- Footer PArt
 =========================================== -->
 

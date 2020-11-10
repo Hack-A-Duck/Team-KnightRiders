@@ -36,7 +36,9 @@ mongoose.set('useFindAndModify', false);
 var BlogSchema = new mongoose.Schema({
 	title: String,
 	image:String,
-	body:String
+	body:String,
+	uid:String,
+	uname:String
 	
 });
 //************
@@ -82,7 +84,7 @@ app.get("/blogs",function(req,res){
 			console.log(err);
 		}else{
 			
-			res.render("index",{Blog:body});
+			res.render("index",{Blog:body,cu:req.user});
 		}
 		
 	});
@@ -93,19 +95,21 @@ app.get("/blogs",function(req,res){
                      // New Route
 		// =======================================
 
-app.get("/blogs/new",function(req,res){
-	res.render("new");
+app.get("/blogs/new",isLoggedIn,function(req,res){
+	res.render("new",{cu:req.user});
 });
 
 // ************************************* New Route Ended****************************
 
                   // Post Route
   // =======================================
-app.post("/blogs",function(req,res){
+app.post("/blogs",isLoggedIn,function(req,res){
 	var title = req.body.Title;
     var image = req.body.Image;
 	var des = req.body.Description;
-	var newData = {title:title,image:image,body:des};
+	var uid=req.body.uid;
+	var uname=req.body.uname;
+	var newData = {title:title,image:image,body:des,uid:uid,uname:uname};
 	
 	Blog.create(newData,function(err,body){
 		if(err){
@@ -126,7 +130,7 @@ app.post("/blogs",function(req,res){
 		if(err){
 			console.log("Error At id Line");
 		}else{
-			res.render("detail",{blog:body});
+			res.render("detail",{blog:body,cu:req.user});
 			
 		}
 		
@@ -137,7 +141,7 @@ app.post("/blogs",function(req,res){
 
                           // Edit Route
  // =====================================================================
-app.get("/blogs/:id/edit",function(req,res){
+app.get("/blogs/:id/edit",isLoggedIn,function(req,res){
 	Blog.findById(req.params.id,function(err,body){
 		if(err){
 			console.log("Error At edit id Line")
@@ -150,7 +154,7 @@ app.get("/blogs/:id/edit",function(req,res){
  
 });
  // put route
-app.put("/blogs/:id",function(req,res){
+app.put("/blogs/:id",isLoggedIn,function(req,res){
 	
 	
 	var title = req.body.Title;
@@ -173,7 +177,7 @@ app.put("/blogs/:id",function(req,res){
 // ***********************************************************************/
           // Delete route
 // ===================================================
-app.delete("/blogs/:id",function(req,res){
+app.delete("/blogs/:id",isLoggedIn,function(req,res){
 			Blog.findByIdAndRemove(req.params.id,function(err){
 				if(err){
 					res.redirect("/blogs");
@@ -222,7 +226,7 @@ app.get("/login",function(req, res) {
 });
 //login logic
 //middleware
-app.post("/login", passport.authenticate("local", {
+app.post("/login",passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/login"
     }),function(req,res){
@@ -248,12 +252,13 @@ function isLoggedIn(req,res,next){
 
 // isLoggedIn
 
-
-
-
-
-
 // ************************************* Post Route Ended****************************
+
+//wrong route
+app.get("/wrong",function(req,res){
+	res.render("wrong");
+})
+
 // app.listen("3000",function(){
 // 	console.log("Server Started");
 // });

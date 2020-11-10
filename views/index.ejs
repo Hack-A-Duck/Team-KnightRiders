@@ -30,7 +30,7 @@
 	
 	<!-- *********************** Navbar Ends***************************************** -->
 	<div id="mainContainer" class="conatiner mt-5">
-	
+	<%=cu%>
 	
 	<%Blog.forEach(function(Blog){%>
 			<div class="container mt-5 border border-dark">
@@ -40,6 +40,11 @@
 	<img src="<%=Blog.image%>">
 	<div>
 		
+		<h2>
+			By:- <%=Blog.uname%>
+		</h2>
+
+
 		<a href="/blogs/<%=Blog._id%>" class="btn btn-primary">Show more</a>
 	</div>	
 				
