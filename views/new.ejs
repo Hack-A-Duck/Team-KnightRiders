@@ -1,54 +1,90 @@
-            <!-- Header PArt -->
-<!-- ************************************************* -->
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Blog</title>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-	<link  rel="stylesheet" type="text/css" href="/stylesheet/app.css">
-		
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<!-- <style type="text/css"></style> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<title>New</title>
+
+
 </head>
+
 <body>
-<!-- ******************************** HEader Ends************************************** -->
-	                           
+
+
+
+<!-- //style tags -->
+
+<style>
+
+
+
+#form{
+
+position: absolute;
+margin-top: 12%;
+margin-left: 9%;
+
+
+}
+
+
+#title{
+position: absolute;
+margin-top: 8%;
+margin-left: 10%;
+border: 2px solid black;
+text-align: center;
+padding: 1rem;
+background-color: black;
+color:yellow;
+
+}
+
+#inp{
+    width:20rem;
+}
+</style>
+<!-- ******************************** -->
+
 	                           <!-- Navbar  -->
-	<!-- ================================================================ -->
+    <!-- ================================================================ -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
 	<div class="ui fixed inverted menu">
-		<div class="ui container">
+		<div class="ui container" id="navc">
 			<div class="header item">
-				<i class="rss icon"></i>Blog Site
+				<i class="rss icon" style="color: yellow;"></i>Blog Buddy
 			</div>
 			<a class="item" href="/blogs">Home</a>
-			<a class="item" href="/blogs/new">New Post</a>
+			<!-- <a class="item" href="/blogs/new">New Post</a> -->
+			<a class="item" href="/login">Login</a>
+			<a class="item" href="/register">Sign Up</a>
+			<a class="item" href="/logout">Logout</a>
 		</div>
   
 </div>
 	
 	<!-- *********************** Navbar Ends***************************************** -->
-                  
-	
-	
-	                      <!-- Form Part -->
-	<!-- ================================================================== -->
-	<%=cu%>
-	<div id="mainContainer" class="container mt-5">
-		<h1>
+
+<!-- ********************************************* -->
+<!-- //form part -->
+    <div id="mainContainer" class="container mt-5">
+		<h1 id="title">
 			Add New Blog
 		</h1>
-		<form action="/blogs" method="POST">
+		<form action="/blogs" id="form" method="POST">
 		
 			<div  class="mt-5">
-				<input autocomplete="off" id="input_title"  class="border-2 border-dark" type="text" name="Title" placeholder="Title Of Post">
+				<input id="inp" autocomplete="off" id="input_title"  class="border-2 border-dark" type="text" name="Title" placeholder="Title Of Post">
 			</div>
 			
 			<div  class="mt-3 ">
-				<input autocomplete="off" id="input_image" type="text" class="border-2 border-dark" name="Image" placeholder="Image For Post">
+				<input id="inp" autocomplete="off" id="input_image" type="text" class="border-2 border-dark" name="Image" placeholder="Image For Post">
 			</div>
 			
 			<div  class="mt-3">
-			<input autocomplete="off" id="input_des" type="text" name="Description" class="border-2 border-dark" placeholder="Description Of Post">	
+			<input id="inp"  autocomplete="off" id="input_des" type="text" name="Description" class="border-2 border-dark" placeholder="Description Of Post">	
 			</div>
 			   
 			
@@ -60,24 +96,13 @@
 					<input autocomplete="off" id="input_des" type="hidden" name="uname" class="border-2 border-dark" value="<%=cu.username%>">	
 					</div>
 
-			<div>
-		<input type="submit">
+			<div style="margin-left: 30%;">
+		<input type="submit" class="btn btn-dark" style="color: yellow;">
 			</div>
 			
 		</form>
 	
 	</div>
-	
-	
-	
-	
-	
-	
-	<!-- *************************************************************************************** -->
-	
-<!-- Footer PArt
-=========================================== -->
+</body>
 
-	</body>
 </html>
-
