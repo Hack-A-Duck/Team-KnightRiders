@@ -32,7 +32,7 @@
 	
 	                      <!-- Form Part -->
 	<!-- ================================================================== -->
-	
+	<%=cu%>
 	<div id="mainContainer" class="container">
 		<h1>
 			Add New Blog
@@ -40,19 +40,27 @@
 		<form action="/blogs" method="POST">
 		
 			<div  class="mt-5">
-				<input id="input_title"  class="border-2 border-dark" type="text" name="Title" placeholder="Title Of Post">
+				<input autocomplete="off" id="input_title"  class="border-2 border-dark" type="text" name="Title" placeholder="Title Of Post">
 			</div>
 			
 			<div  class="mt-3 ">
-				<input id="input_image" type="text" class="border-2 border-dark" name="Image" placeholder="Image For Post">
+				<input autocomplete="off" id="input_image" type="text" class="border-2 border-dark" name="Image" placeholder="Image For Post">
 			</div>
 			
 			<div  class="mt-3">
-			<input id="input_des" type="text" name="Description" class="border-2 border-dark" placeholder="Description Of Post">	
+			<input autocomplete="off" id="input_des" type="text" name="Description" class="border-2 border-dark" placeholder="Description Of Post">	
 			</div>
+			   
+			
+			<div  class="mt-3">
+				<input autocomplete="off" id="input_des" name="uid" class="border-2 border-dark" value="<%=cu._id%>">	
+				</div>
+
+				<div  class="mt-3">
+					<input autocomplete="off" id="input_des" name="uname" class="border-2 border-dark" value="<%=cu.username%>">	
+					</div>
+
 			<div>
-		
-		
 		<input type="submit">
 			</div>
 			

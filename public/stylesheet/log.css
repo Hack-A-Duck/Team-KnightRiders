@@ -1,0 +1,69 @@
+body{
+    
+    background-image: url(https://www.cyberhelpindia.com/blogs/wp-content/uploads/2016/09/944772.jpg);
+
+    background-size: cover;
+}
+
+.hed{
+    text-align: center;
+    margin: 80px 0;
+}
+
+h1{
+
+    font-size: 70px;
+    color: rgb(255, 174, 0);
+    padding-top: 150px;
+    padding-right: 50px;
+    padding-bottom: 5px;
+}
+
+.input{
+    text-align: center;
+    margin: 80px 0;
+}
+
+
+input[type="text"]{
+    height: 50px;
+    text-align: center;
+    width: 500px;
+    background: #e5c9f5;
+    font-family: "Nunito",sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+}
+
+
+input[type="password"]{
+    height: 50px;
+    width: 300px;
+    margin-left: 10px;
+    text-align: center;
+    background: #e5c9f5;
+    font-family: "Nunito",sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+}
+
+button{
+
+    height: 40px;
+    width: 100px;
+    background: rgb(248, 200, 200);
+}
+
+.nav{
+    text-align: center;
+    margin: 20px 0;
+}
+
+li {
+
+    color: rgb(255, 0, 13);
+    font-size: 30px;
+    padding-bottom: 30px;
+}

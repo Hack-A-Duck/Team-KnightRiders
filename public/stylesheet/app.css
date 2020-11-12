@@ -1,25 +1,42 @@
-i.icon{
-	
-	font-size:1.5rem;
+
+
+#section2{
+	margin-top: 5%;
+}
+
+#BlogContainer{
+background-color: whitesmoke;
+/* margin-left: 20px; */
+}
+
+#Bcard{
+	padding: 1rem;
+	padding-top: 10%;
+	margin-left: 20%;
+	background-color: black;
+	border: 2px solid black;
+	color: white;
+	text-align: center;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+height: fit-content;
+margin-bottom: 10%;
+}
+
+#vmb{
+color: yellow;
+/* margin-left: 30%; */
+}
+/* #section1{
+	margin-top: 100%;
+	background-image: url("https://images.unsplash.com/photo-1519817914152-22d216bb9170?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+    position: relative;
+    margin-top: 0;
+} */
+
+.rss .icon{
 	color:yellow;
-}
-
-#mainContainer{
-	position:relative;
-	top:50px;
-}
-
-#input_des{
-	height:100px;
-	width:50%;
-}
-
-#input_title{
-	
-	width:50%;
-}
-
-#input_image{
-	
-	width:50%;
 }
