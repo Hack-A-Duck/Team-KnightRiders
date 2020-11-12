@@ -96,6 +96,7 @@ app.get("/blogs",function(req,res){
 		// =======================================
 
 app.get("/blogs/new",isLoggedIn,function(req,res){
+	
 	res.render("new",{cu:req.user});
 });
 
@@ -125,7 +126,8 @@ app.post("/blogs",isLoggedIn,function(req,res){
       //Detail Route
 // ======================================
   app.get("/blogs/:id",function(req,res){
-	
+	//   console.log("For Blog ID");
+	// console.log(req);
 	Blog.findById(req.params.id,function(err,body){
 		if(err){
 			console.log("Error At id Line");
@@ -220,16 +222,20 @@ app.post("/register",function(req,res){
 });
 
 //LOGIN ROuTES
-
+// var temp;
 app.get("/login",function(req, res) {
-    res.render("login");
+
+	res.render("login");
+	
 });
 //login logic
 //middleware
 app.post("/login",passport.authenticate("local", {
-    successRedirect: "/",
+
+    successRedirect:"/",
     failureRedirect: "/login"
     }),function(req,res){
+		
 });
 
 app.get("/logout",function(req, res) {
@@ -238,6 +244,7 @@ app.get("/logout",function(req, res) {
 });
 
 function isLoggedIn(req,res,next){
+
     if(req.isAuthenticated()){
         return next();
     }
@@ -259,10 +266,12 @@ app.get("/wrong",function(req,res){
 	res.render("wrong");
 })
 
-// app.listen("3000",function(){
-// 	console.log("Server Started");
-// });
+app.listen("3000",function(){
+	console.log("Server Started");
+});
 
-app.listen(process.env.port,process.env.ip);
+// app.listen(process.env.port,process.env.ip);
 
 // app.listen(process.env.PORT,process.env.IP);
+
+// de8dc6f4472a1f06ef54d889163b699d062cf9a0

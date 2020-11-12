@@ -1,0 +1,76 @@
+body{
+    
+    background-image: url(https://b.kisscc0.com/20180517/qe/kisscc0-copywriting-paper-website-content-writer-publishin-business-5afd87bb85dea8.3582647715265647955483.jpg);
+
+    background-size: cover;
+}
+
+
+
+
+h1{
+
+    font-size: 70px;
+    color: rgb(130, 0, 190);
+    padding-top: 150px;
+    margin-left: 690px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+
+}
+
+.input{
+    text-align: center;
+    margin: 100px 0;
+}
+input[type="text"]{
+    height: 50px;
+    text-align: center;
+    width: 600px;
+    background: #e5c9f5;
+    font-family: "Nunito",sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+}
+
+
+input[type="password"]{
+    height: 50px;
+    width: 300px;
+    margin-left: 10px;
+    text-align: center;
+    background: #e5c9f5;
+    font-family: "Nunito",sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+}
+
+button{
+
+    height: 40px;
+    width: 100px;
+    background: rgb(248, 200, 200);
+}
+
+.nav{
+    text-align: center;
+    margin: 20px 0;
+}
+
+li {
+
+    color: rgb(255, 0, 13);
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+
+/* form {
+    margin-left: 680px;
+    padding-bottom: 60px;
+} */
+
+/* 
+ */

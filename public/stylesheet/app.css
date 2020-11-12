@@ -1,12 +1,23 @@
 i.icon{
 	
 	font-size:1.5rem;
-	color:yellow;
+	color:rgb(229, 255, 0);
 }
+
+ 
+ /* .holder{ */
+
+	/* background-color: rgb(59, 2, 97); */
+
+	/* background-image: url(https://th.bing.com/th/id/OIP.8voOidOdEYRq9FSFzjo_wAHaNK?pid=Api&rs=1); */
+	/* background-size: cover; */
+	/* padding-top: 40px; */
+	/* padding-bottom: 40px; */
+/* }  */
 
 #mainContainer{
 	position:relative;
-	top:50px;
+	top:5px;
 }
 
 #input_des{
@@ -19,7 +30,25 @@ i.icon{
 	width:50%;
 }
 
+.name{
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 #input_image{
 	
 	width:50%;
 }
+
+.foot{
+	margin-top: 5px;
+	padding-top: 10px;
+	height: 70px;
+	width: 1900px;
+	
+    text-align: center;
+	background-color: rgba(0, 0, 0, 0.801);
+}
+
+
