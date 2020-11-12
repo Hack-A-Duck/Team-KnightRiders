@@ -6,7 +6,7 @@
 	<title>Blog</title>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 	<link  rel="stylesheet" type="text/css" href="/stylesheet/app.css">
-	<!-- <style type="text/css"></style> -->
+	<style type="text/css"></style>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
@@ -17,7 +17,7 @@
 	<div class="ui fixed inverted menu">
 		<div class="ui container">
 			<div class="header item">
-				<i class="rss icon"></i>Blog Site
+				<i class="rss icon" style="color: yellow;"></i>Blog Buddy
 			</div>
 			<a class="item" href="/blogs">Home</a>
 			<a class="item" href="/blogs/new">New Post</a>
@@ -29,40 +29,50 @@
 </div>
 	
 	<!-- *********************** Navbar Ends***************************************** -->
-	<div id="mainContainer" class="holder">
-		<%=cu%>
-		
-		<%Blog.forEach(function(Blog){%>
-				<div class="container mt-5 border border-dark">
-						<h2 style="color: rgb(86, 215, 247);">
-							<%=Blog.title%>
-						</h2>
+	<div>
+	
+<!-- <section id="section1">
 
-						<img src="<%=Blog.image%>">
+<div id="#">
+<h1>Blog Buddy</h1>
+<h4>Blogs and more..!!!</h4>
+</div>
 
-					<div class= name>
+</section> -->
+<section1>
 
-						<h2 style="color: rgb(250, 6, 6);">
-							By:- <%=Blog.uname%>
-						</h2>
-						<a href="/blogs/<%=Blog._id%>" class="btn btn-primary">Show more</a>
-					
-					</div>
+
+</section1>
+
+
+
+<div id="section2">
+		<div class="row">
+			<%Blog.forEach(function(Blog){%>
+
+				<div class="col-sm-12 col-md-6 col-lg-4 mt-5" id="BlogContainer">
+					<div class="card" style="width: 21rem;" id="Bcard">
+						<img src="<%=Blog.image%>" class="card-img-top" alt="">
+						<div class="card-body">
+						  <h5 class="card-title"><%=Blog.title%></h5>
+						  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+						  <a href="/blogs/<%=Blog._id%>" class="btn btn-outline-warning" id="vmb">View More</a>
+						</div>
+					  </div>
 
 				</div>
-		<%})%>
 
-	</div>
+				<%})%>
 
-	<div class ="foot">
-
-		<h1 style="color: rgb(247, 242, 0);">Gotcha !! You HAve Reched The End </h1>
-		
-	</div>
+     </div>
+</div>
+				
+				
 	
-<!-- 	
-	         Footer PArt
-	=========================================== -->
+</div>
+	
+	         <!-- Footer PArt
+	=========================================== --> -->
 
 	</body>
 </html>

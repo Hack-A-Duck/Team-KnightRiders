@@ -266,12 +266,12 @@ app.get("/wrong",function(req,res){
 	res.render("wrong");
 })
 
-app.listen("3000",function(){
-	console.log("Server Started");
-});
+// app.listen("3000",function(){
+// 	console.log("Server Started");
+// });
 
 // app.listen(process.env.port,process.env.ip);
 
-// app.listen(process.env.PORT,process.env.IP);
+app.listen(process.env.PORT,process.env.IP);
 
 // de8dc6f4472a1f06ef54d889163b699d062cf9a0

@@ -11,7 +11,7 @@ body{
 h1{
 
     font-size: 70px;
-    color: rgb(130, 0, 190);
+    color: black
     padding-top: 150px;
     margin-left: 690px;
     padding-right: 50px;
@@ -27,7 +27,7 @@ input[type="text"]{
     height: 50px;
     text-align: center;
     width: 600px;
-    background: #e5c9f5;
+    background: black;
     font-family: "Nunito",sans-serif;
     font-weight: bold;
     font-size: 20px;
