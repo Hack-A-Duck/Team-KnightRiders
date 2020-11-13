@@ -1,11 +1,11 @@
 # Hack-A-Bit-2020
 Blog Project
  
-                                    note:-
-                            ====================
-This is  a fullstack project which uses Node.ja as backend and Mongodb.Atlas as cloud database.
+                                                       note:-
+                                                ====================
+        This is  a fullstack project which uses Node.js as backend and Mongodb.Atlas as cloud database.
 
-*********************************************************************
+                      *********************************************************************
 
 
                                            Requirements {FOR LOCAL RUNNING OF THE CODE  }:-
