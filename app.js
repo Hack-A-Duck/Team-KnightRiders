@@ -214,10 +214,11 @@ app.post("/register",function(req,res){
         if(err){
             console.log(err);
             return res.render("/register");
-        }
+        }else{
         passport.authenticate("local")(req,res,function(){
             res.redirect("/");
         });
+	}
     });
 });
 
