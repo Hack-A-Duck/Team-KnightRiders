@@ -1,108 +1,191 @@
+            <!-- Header PArt -->
+<!-- ************************************************* -->
+<!DOCTYPE html>
 <html>
 <head>
+	<title>Blog</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-
-<title>New</title>
-
-
+		
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- <style type="text/css"></style> -->
 </head>
-
 <body>
-
-
-
-<!-- //style tags -->
-
-<style>
-
-
-
-#form{
-
-position: absolute;
-margin-top: 12%;
-margin-left: 9%;
-
-
-}
-
-
-#title{
-position: absolute;
-margin-top: 8%;
-margin-left: 10%;
-border: 2px solid black;
-text-align: center;
-padding: 1rem;
-background-color: black;
-color:yellow;
-
-}
-
-#inp{
-    width:20rem;
-}
-</style>
-<!-- ******************************** -->
-
+<!-- ******************************** HEader Ends************************************** -->
+	                           
 	                           <!-- Navbar  -->
-    <!-- ================================================================ -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-
+	<!-- ================================================================ -->
 	<div class="ui fixed inverted menu">
-		<div class="ui container" id="navc">
+		<div class="ui container">
 			<div class="header item">
-				<i class="rss icon" style="color: yellow;"></i>Blog Buddy
+				<i class="rss icon"></i>Blog Buddy
 			</div>
-			<a class="item" href="/blogs">Home</a>
-			<!-- <a class="item" href="/blogs/new">New Post</a> -->
-			<a class="item" href="/login">Login</a>
-			<a class="item" href="/register">Sign Up</a>
-			<a class="item" href="/logout">Logout</a>
+			
+			<a class="item" href="/blogs">Explore</a>
+			<a class="item" href="/blogs/new">New Post</a>
+
 		</div>
   
 </div>
 	
 	<!-- *********************** Navbar Ends***************************************** -->
+                  
+	
+	
+	                      <!-- Form Part -->
+	<!-- ================================================================== -->
+	<div class="fp">
+	
+		<%=cu%>
+		<div id="mainContainer" class="container">
+			<h1 style="color: rgb(22, 253, 60); font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;">
+				Add New Blog :-
+			</h1>
 
-<!-- ********************************************* -->
-<!-- //form part -->
-    <div id="mainContainer" class="container mt-5">
-		<h1 id="title">
-			Add New Blog
-		</h1>
-		<form action="/blogs" id="form" method="POST">
-		
-			<div  class="mt-5">
-				<input id="inp" autocomplete="off" id="input_title"  class="border-2 border-dark" type="text" name="Title" placeholder="Title Of Post">
-			</div>
-			
-			<div  class="mt-3 ">
-				<input id="inp" autocomplete="off" id="input_image" type="text" class="border-2 border-dark" name="Image" placeholder="Image For Post">
-			</div>
-			
-			<div  class="mt-3">
-			<input id="inp"  autocomplete="off" id="input_des" type="text" name="Description" class="border-2 border-dark" placeholder="Description Of Post">	
-			</div>
-			   
-			
-			<div  class="mt-3">
-				<input autocomplete="off" id="input_des" type="hidden" name="uid" class="border-2 border-dark" value="<%=cu._id%>">	
-				</div>
+			<div class="inpt">
 
-				<div  class="mt-3">
-					<input autocomplete="off" id="input_des" type="hidden" name="uname" class="border-2 border-dark" value="<%=cu.username%>">	
+				<form action="/blogs" method="POST">
+				
+					<div  class="mt-5">
+						<input autocomplete="off" id="input_title"  class="border-2 border-dark" type="text" name="Title" placeholder="Title Of Post">
+					</div>
+					
+					<div  class="mt-3 ">
+						<input autocomplete="off" id="input_image" type="text" class="border-2 border-dark" name="Image" placeholder="Image URL For Post">
+					</div>
+					
+					<div  class="mt-3">
+						<input autocomplete="off" id="input_des" type="text" name="Description" class="border-2 border-dark" placeholder="Description Of Post">	
 					</div>
 
-			<div style="margin-left: 30%;">
-		<input type="submit" class="btn btn-dark" style="color: yellow;">
+					<div  class="mt-3">
+						<input autocomplete="off" id="input_des" type="hidden" name="uid" class="border-2 border-dark" value="<%=cu._id%>">	
+					</div>
+		
+
+					<div  class="mt-3">
+							<input autocomplete="off" id="input_des" type= "hidden" name="uname" class="border-2 border-dark" value="<%=cu.username%>">	
+					</div>
+
+					<div>
+						<input type="submit">
+					</div>
+					
+				</form>
+
 			</div>
-			
-		</form>
-	
+				
+		</div>
 	</div>
-</body>
+
+	
+	<!-- *************************************************************************************** -->
+	
+		<!-- Footer PArt
+			=========================================== -->
+	
+	<div class ="foot">
+
+		<h1 style="color: rgb(189, 0, 247);"> ||   Imagine - Create - Release   || </h1>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+
+	</body>
+
 
 </html>
+
+<style>
+
+			
+		i.icon{
+			
+			font-size:1.5rem;
+			color:rgb(255, 60, 0);
+		}
+
+			
+		#mainContainer{
+			position:relative;
+			top:5px;
+		}
+
+		#input_des{
+			height:100px;
+			width:50%;
+		}
+
+		#input_title{
+			
+			width:50%;
+		}
+
+		#input_image{
+			
+			width:50%;
+		}
+
+		.fp{
+			background-image: url(https://goinswriter.com/wp-content/uploads/gw-wab-2.jpg);
+			background-size: cover;
+			height: 890px;
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+
+
+		input[type="text"]{
+			height: 50px;
+			text-align: center;
+			width: 600px;
+			background: #efbbff;
+			/*font-family: "Nunito",sans-serif;
+			font-weight: bold;*/
+			font-size: 20px;
+			border: none;
+		}
+
+
+		input[type="abc"]{
+			height: 20px;
+			text-align: center;
+			width: 400px;
+			background: #efbbff;
+			font-family: "Nunito",sans-serif;
+			font-weight: bold;
+			font-size: 20px;
+			border: none;
+			padding-bottom: 5px;
+		}
+
+		input[type="submit"]{
+
+			height: 40px;
+			width: 100px;
+			margin-top: 10px;
+			background: rgb(247, 120, 120);
+			
+
+		}
+
+
+
+		.foot{
+			margin-top: 5px;
+			padding-top: 10px;
+			padding-left: 10px;
+			height: 70px;
+			width: 1920px;
+			
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0.801);
+		}
+
+</style>
+
