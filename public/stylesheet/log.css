@@ -1,6 +1,7 @@
 body{
     
     background-image: url(https://www.cyberhelpindia.com/blogs/wp-content/uploads/2016/09/944772.jpg);
+    background-repeat: no-repeat;
 
     background-size: cover;
 }
