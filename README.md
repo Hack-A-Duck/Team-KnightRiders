@@ -1,11 +1,17 @@
 # Hack-A-Bit-2020
 Blog Project
  
-                                                       note:-
-                                                ====================
-        This is  a fullstack project which uses Node.js as backend and Mongodb.Atlas as cloud database.
+                                                       Description:-
+                                                  ====================
+                            This is  a fullstack project which uses Node.js as backend and Mongodb.Atlas as cloud database. 
+	Whether you are a coder, non coder or a complete noob with technologies and you have the passion to write or share ideas you are most welcomed.
+	                This app is named as "BLOG_BUDDY" and helps you create fast and secure blogs free of cost..!!
+			
+			Deployment Link:- https://blogbuddy.herokuapp.com/
+			
+			                                                       @all_right_reserved_with_team_KinghtRiders
 
-                      *********************************************************************
+       *********************************************************************************************************************************************************4
 
 
                                            Requirements {FOR LOCAL RUNNING OF THE CODE  }:-
@@ -15,8 +21,8 @@ Blog Project
                       3.You need a text editor like   VS CODE .
                       
                       
-                                         STEPS FOR SETUP:-
-                                 =====================================
+                        STEPS FOR SETUP:-
+              ====================================
                       1.OPEN the Hack-A-Bit-2020 pulled folder with the help of vscoded
                       2.Go to app.js file and edit the line ie.:-
                           '
